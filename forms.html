@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Form Validation</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<style>
+    .demo{
+        width: 80%;
+    }
+
+    .center{
+        margin-left: 80px;
+    }
+
+</style>
+
+<script>
+    function Validate(){
+        if(document.myForm.Email.value == ""){
+            alert("PLease provide your Email ID");
+            document.myForm.Email.focus();
+            return false;
+        }else if(document.myForm.Password.value == ""){
+            alert("PLease provide your Password");
+            document.myForm.Password.focus();
+            return  false
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+
+<body>
+    
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 border rounded shadow-lg p-4 mb-4 bg-white">
+                <form class="center" action="message.html" name="myForm" onsubmit="return(Validate())">
+                    <div class="form-group">
+                      <label for="Email">Email address:</label>
+                      <input type="email" class="form-control demo" placeholder="Enter Your Email" name="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control demo" placeholder="Enter Your Password" name="Password">
+                    </div>
+                    <div class="form-group form-check">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox"> Remember me
+                      </label>
+                    </div>
+                    <button type="Submit" class="btn btn-primary mb-2">Submit</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
